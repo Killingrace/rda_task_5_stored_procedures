@@ -2,7 +2,7 @@ USE ShopDB;
 
 DELIMITER //
 CREATE PROCEDURE get_warehouse_product_inventory(
-    IN WarehouseID INT
+    IN p_warehouse_id INT
 )
 BEGIN
 
@@ -12,7 +12,7 @@ BEGIN
     FROM ProductInventory
     INNER JOIN Products
     ON ProductID = Products.ID
-    WHERE ProductInventory.WarehouseID = WarehouseID;
+    WHERE ProductInventory.WarehouseID = p_warehouse_id;
 
 END //
 DELIMITER ;
