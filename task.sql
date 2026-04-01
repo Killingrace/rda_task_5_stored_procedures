@@ -7,12 +7,12 @@ CREATE PROCEDURE get_warehouse_product_inventory(
 BEGIN
 
     SELECT 
-	Products.Name AS product_name,
-	ProductInventory.WarehouseAmount AS amount
+	Products.Name,
+	ProductInventory.WarehouseAmount
     FROM ProductInventory
     INNER JOIN Products
     ON ProductID = Products.ID
     WHERE ProductInventory.WarehouseID = WarehouseID;
 
 END //
-DELIMITER;
+DELIMITER ;
